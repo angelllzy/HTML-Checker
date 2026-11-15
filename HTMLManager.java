@@ -8,6 +8,11 @@ public class HTMLManager {
       if (html == null) {
          throw new IllegalArgumentException();
       }
+      page = new LinkedList<HTMLTag>();
+      // go through each tag and copy them
+      for (HTMLTag tag : html) {
+         page.add(tag);
+      }
   }
   
 }
