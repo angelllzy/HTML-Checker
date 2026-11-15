@@ -19,4 +19,12 @@ public class HTMLManager {
       return tags;
   }
   
+  public String toString() {
+      String result = "";
+      for (HTMLTag tag : tags) {
+         result = result + tag.toString();
+      }
+      return result;
+  }
+  
 }
