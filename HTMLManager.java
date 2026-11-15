@@ -27,4 +27,20 @@ public class HTMLManager {
       return result;
   }
   
+  // fix missing or extra tags in queue
+  public void fixHTML();
+      Stack<HTMLTag> open = new Stack<HTMLTag>();
+      int size = tags.size();
+      
+      for (int i = 0; i < size; i++) {
+         HTMLTag tag = tags.remove();
+         
+         if (tag.isSelfClosing()) {
+            tags.add(tag);
+         } else if (tag.isOpening()) {
+            tags.add(tag);
+            open.push(tag);
+         } 
+         }
+      }
 }
